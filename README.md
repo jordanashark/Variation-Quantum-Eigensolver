@@ -1,5 +1,4 @@
 # Variation-Quantum-Eigensolver
-# VQE (Variational Quantum Eigensolver)
 
 ## What it does
 

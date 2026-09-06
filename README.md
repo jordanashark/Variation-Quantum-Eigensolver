@@ -39,7 +39,7 @@ print(result.optimal_energy)
 print(H.exact_ground_state_energy())  # ground truth for comparison
 ```
 
-Run `python vqe.py` directly to execute the two built-in demos (H₂ molecule, random 3-qubit Hamiltonian), each checked against exact diagonalization.
+Run `python main.py` directly to execute the two built-in demos (H₂ molecule, random 3-qubit Hamiltonian), each checked against exact diagonalization.
 
 ## Limitations
 

@@ -20,27 +20,6 @@ Components
 - `h2_hamiltonian()` — published 2-qubit tapered Hamiltonian for the H₂ molecule (STO-3G basis, Jordan-Wigner + parity tapering, bond length 0.735 Å).
 - `random_hamiltonian(n_qubits, n_terms, seed)` — random Hermitian Hamiltonian built from random Pauli strings, for testing on arbitrary problems.
 
-## Usage
-
-```python
-from vqe import Hamiltonian, HardwareEfficientAnsatz, VQE
-
-H = Hamiltonian([
-    (-1.0, "II"),
-    (0.5, "ZZ"),
-    (0.2, "XX"),
-])
-
-ansatz = HardwareEfficientAnsatz(n_qubits=2, depth=2, use_rz=True)
-vqe = VQE(H, ansatz, optimizer="COBYLA", maxiter=300)
-result = vqe.run_best_of(n_restarts=5, seed=0)
-
-print(result.optimal_energy)
-print(H.exact_ground_state_energy())  # ground truth for comparison
-```
-
-Run `python main.py` directly to execute the two built-in demos (H₂ molecule, random 3-qubit Hamiltonian), each checked against exact diagonalization.
-
 ## Limitations
 
 - Exact diagonalization (used only for verification) scales as `2^n`, so it's only practical for small qubit counts (~≤12).
